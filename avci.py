@@ -2,7 +2,7 @@
 15 dakikada bir MEXC'deki tüm USDT çiftlerini tarar.
 
 GİRİŞ (hepsi birden):
-- 24 saatlik yükseliş %10 – %30
+- 24 saatlik yükseliş %5 – %30
 - 24 saatlik hacim >= 100K USDT
 - alış-satış farkı <= %0,5
 - fiyatın %1 yakınında hem alış hem satış tarafında >= 500 USDT emir
@@ -31,7 +31,7 @@ API = "https://api.mexc.com/api/v3"
 
 # ---- Kurallar (değiştirme: 4 hafta boyunca sabit) ----
 SERMAYE, POZ_USDT, MAX_POZ = 100.0, 50.0, 2
-DEG_MIN, DEG_MAX = 0.10, 0.30
+DEG_MIN, DEG_MAX = 0.05, 0.30
 HACIM_MIN = 100_000
 SPREAD_MAX, DERIN_BANT, DERIN_MIN = 0.005, 0.01, 500
 TP, SL, SURE_SA = 0.10, 0.03, 24
@@ -244,7 +244,7 @@ def main():
               "btc_bas": fiyat.get("BTCUSDT"), "nakit": SERMAYE, "poz": {}, "gecmis": [],
               "son_cikis": {}, "son_ozet": ""}
         tg("🚀 Yükselen Avcısı başladı (kâğıt üstü, 100 USDT)\n"
-           "Giriş: 24s %10–30, hacim ≥100K, fark ≤%0,5, tahta ≥500 USDT, son 1 saat yükselişte\n"
+           "Giriş: 24s %5–30, hacim ≥100K, fark ≤%0,5, tahta ≥500 USDT, son 1 saat yükselişte\n"
            "Çıkış: +%10 / -%3 / 24 saat | 2 × 50 USDT | 15 dk'da bir kontrol")
 
     cikislar(st, fiyat)
